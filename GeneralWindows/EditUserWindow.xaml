@@ -1,0 +1,137 @@
+﻿<Window x:Name="edit_user_window" x:Class="HealthyFood_Shop.GeneralWindows.EditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyFood_Shop.GeneralWindows"
+        mc:Ignorable="d"
+        Title="EditUserWindow" Height="700" Width="900" WindowStartupLocation="CenterScreen" Loaded="edit_user_window_Loaded">
+    <Grid Background="{DynamicResource MyYellowBrush}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+
+        <Grid  x:Name="grid_user_values" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="0 0 0 5" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                <Label FontSize="25" Content="ПІБ"/>
+                <TextBox Grid.Row="1" x:Name="tb_pib" Style="{StaticResource tb_default}"
+                         Text="" Width="400" FontSize="22" Margin="8 0 8 8" Padding="2"
+                         TextWrapping="Wrap" Height="35"
+                         VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+            </Grid>
+
+            <Grid Margin="0 5 0 0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                <Label FontSize="25" Content="Номер телефону"/>
+                <TextBox Grid.Row="1" x:Name="tb_phone" Style="{StaticResource tb_default}"
+                         Text="" Width="400" FontSize="22" Margin="8 0 8 8" Padding="2"
+                         TextWrapping="Wrap" Height="35"
+                         VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+            </Grid>
+
+
+            <Grid Grid.Column="1" Grid.Row="0" Margin="5 0 0 5"
+                  HorizontalAlignment="Left" VerticalAlignment="Bottom" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                <Label FontSize="25" Content="Посада"/>
+                <ComboBox Style="{DynamicResource cb_default}" x:Name="cb_position"
+                          FontFamily="Tahoma" FontSize="22" Height="35" Width="400"
+                          Grid.Row="1" Margin="8 0 8 8"/>
+            </Grid>
+
+            <Button x:Name="btn_change_logpas" Grid.Row="1" Grid.Column="1" Width="400" Height="75" Margin="15 10"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Style="{StaticResource btn_black_text}" Content="Встановити логін/пароль" Click="btn_change_logpas_Click"/>
+
+            <Button x:Name="btn_apply_changes" Grid.Row="2" Grid.ColumnSpan="2" Width="830" Height="50" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Style="{StaticResource btn_black_text}" Content="✔" Click="btn_apply_changes_Click"/>
+
+        </Grid>
+
+        <DataGrid x:Name="datagrid_action_log" Grid.Row="2" Grid.Column="1" Margin="12" Background="{StaticResource MyWhiteBrush}"
+                   AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="False"
+                  IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column"
+                      BorderThickness="1" BorderBrush="{StaticResource MyPaleBlackBrush}"
+                  Width="Auto" HorizontalAlignment="Left">
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="{StaticResource MyWhiteBrush}" />
+                    <Setter Property="Foreground" Value="{StaticResource MyBlackBrush}" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontFamily" Value="Global Serif" />
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Gray" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFE6E3E2" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Gray" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="#FFE6E3E2" />
+                    </Style.Resources>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="{StaticResource MyBlackBrush}" />
+                    <Setter Property="Foreground" Value="{StaticResource MyWhiteBrush}" />
+                    <Setter Property="FontSize" Value="25" />
+                    <Setter Property="FontFamily" Value="Global Serif" />
+                    <Setter Property="Padding" Value="10" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="BorderBrush" Value="{StaticResource MyPaleBlackBrush}" />
+                    <Setter Property="BorderThickness" Value="0 0 1 1" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="{StaticResource MySlightBlackBrush}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Час" Binding="{Binding LogText}"
+                                        MinWidth="170" >
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Подія" Binding="{Binding LogTime}"
+                                        MinWidth="250" Width="*">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

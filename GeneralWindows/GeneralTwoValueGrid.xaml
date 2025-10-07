@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="HealthyFood_Shop.GeneralWindows.GeneralTwoValueGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthyFood_Shop.GeneralWindows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DataGrid Width="700" Height="200" x:Name="datagrid_values" Background="{StaticResource MyWhiteBrush}"
+                   AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="False"
+                  IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column"
+                      BorderThickness="1" BorderBrush="{StaticResource MyPaleBlackBrush}" Loaded="datagrid_items_in_order_Loaded">
+
+        <DataGrid.Resources>
+            <ContextMenu x:Key="OrderContextMenu" >
+                <MenuItem x:Name="mi_name_add" Header="Додати..." Click="mi_name_add_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="/Images/plus_icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="mi_name_change" Header="Змінити..." Click="mi_name_change_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="/Images/edit_icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="mi_name_remove" Header="Видалити" Click="mi_name_remove_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="/Images/delete_icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+            </ContextMenu>
+        </DataGrid.Resources>
+        <DataGrid.RowStyle>
+            <Style TargetType="DataGridRow">
+                <Setter Property="Background" Value="{StaticResource MyWhiteBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource MyBlackBrush}" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontFamily" Value="Global Serif" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="ContextMenu" Value="{StaticResource OrderContextMenu}"/>
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Gray" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFE6E3E2" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Gray" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="#FFE6E3E2" />
+
+                </Style.Resources>
+            </Style>
+        </DataGrid.RowStyle>
+
+        <DataGrid.ColumnHeaderStyle>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="{StaticResource MyBlackBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource MyWhiteBrush}" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontFamily" Value="Global Serif" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="BorderBrush" Value="{StaticResource MyPaleBlackBrush}" />
+                <Setter Property="BorderThickness" Value="0 0 1 1" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Background" Value="{StaticResource MySlightBlackBrush}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </DataGrid.ColumnHeaderStyle>
+
+        <DataGrid.Columns>
+            <DataGridTextColumn x:Name="dgcol_name"  Header="" Binding="{Binding Key}"
+                                        Width="*">
+                <DataGridTextColumn.ElementStyle>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                    </Style>
+                </DataGridTextColumn.ElementStyle>
+            </DataGridTextColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

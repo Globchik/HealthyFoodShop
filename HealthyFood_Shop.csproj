@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <ApplicationIcon>sun_logo.ico</ApplicationIcon>
+    <StartupObject>HealthyFood_Shop.App</StartupObject>
+    <IsPublishable>False</IsPublishable>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\cancel_image.png" />
+    <None Remove="Images\delete_icon.png" />
+    <None Remove="Images\edit_icon.png" />
+    <None Remove="Images\filter_icon.png" />
+    <None Remove="Images\plus_icon.png" />
+    <None Remove="Images\print_icon.png" />
+    <None Remove="Images\view_icon.png" />
+    <None Remove="sun_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="sun_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" />
+    <PackageReference Include="ScottPlot.WPF" Version="5.0.34" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\cancel_image.png" />
+    <Resource Include="Images\delete_icon.png" />
+    <Resource Include="Images\edit_icon.png" />
+    <Resource Include="Images\filter_icon.png" />
+    <Resource Include="Images\plus_icon.png" />
+    <Resource Include="Images\print_icon.png" />
+    <Resource Include="Images\view_icon.png" />
+    <Resource Include="sun_logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Styles\Colors.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Scrollbar_Style.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+</Project>

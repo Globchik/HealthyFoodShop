@@ -1,0 +1,22 @@
+﻿<UserControl x:Name="Other_page" x:Class="HealthyFood_Shop.MenuParts.OtherPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthyFood_Shop.MenuParts"
+             mc:Ignorable="d" 
+      d:DesignHeight="1017" d:DesignWidth="1660" 
+             MinWidth="1500" MinHeight="340" Loaded="Other_page_Loaded">
+    <Grid  Background="{DynamicResource MyYellowBrush}" >
+        <ScrollViewer>
+            <StackPanel Background="{DynamicResource MyYellowBrush}" x:Name="stack_other">
+                <StackPanel.Resources>
+                    <Style TargetType="DataGrid">
+                        <Setter Property="Margin" Value="0 20"/>
+                    </Style>
+                </StackPanel.Resources>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

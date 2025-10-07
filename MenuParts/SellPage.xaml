@@ -1,0 +1,391 @@
+﻿<UserControl x:Name="OrderPage" x:Class="HealthyFood_Shop.MenuParts.SellPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthyFood_Shop.MenuParts"
+             mc:Ignorable="d" 
+d:DesignHeight="1017" d:DesignWidth="1660" 
+             MinWidth="1400" MinHeight="340" Loaded="OrderPage_Loaded" KeyDown="OrderPage_KeyDown" Unloaded="OrderPage_Unloaded">
+    <Grid Background="{DynamicResource MyYellowBrush}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Товари на вибір -->
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition/>
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+
+            <Grid  Grid.Row="1" Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="125" />
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="1" Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.2*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.ColumnSpan="9" Background="#7FFD8722" />
+                        <Image Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Source="/Images/filter_icon.png" />
+
+                        <Grid Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Назва"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_f_name" Style="{StaticResource tb_default}"
+                         Text="" Width="210" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Ціна від"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_min_price" Style="{StaticResource tb_default}"
+                         Text="" Width="100" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Ціна до"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_max_price" Style="{StaticResource tb_default}"
+                         Text="" Width="100" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Країна"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_f_country" Style="{StaticResource tb_default}"
+                         Text="" Width="210" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Виробник"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_f_manufacturer" Style="{StaticResource tb_default}"
+                         Text="" Width="210" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Категорія"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_f_category" Style="{StaticResource tb_default}"
+                         Text="" Width="210" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Grid Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                            <Label HorizontalContentAlignment="Center" FontSize="25" Content="Підкатегорія"/>
+                            <TextBox Grid.ColumnSpan="2" Grid.Row="1" x:Name="tb_f_subcategory" Style="{StaticResource tb_default}"
+                         Text="" Width="210" FontSize="22" Margin="8 0 8 8" Padding="2"/>
+                        </Grid>
+
+                        <Button x:Name="btn_clear_filters" Grid.Column="8" Style="{DynamicResource btn_black_text}"
+                            Height="45" Width="45" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_clear_filters_Click">
+                            <Image Height="20" Width="20" Source="/Images/cancel_image.png" />
+                        </Button>
+
+                    </Grid>
+                </Grid>
+
+
+
+                <DataGrid x:Name="datagrid_items" Grid.Row="1" Margin="20" Background="{StaticResource MyWhiteBrush}"
+                   AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="False"
+                  IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column"
+                      BorderThickness="1" BorderBrush="{StaticResource MyPaleBlackBrush}">
+
+                    <DataGrid.Resources>
+                        <ContextMenu x:Key="RowContextMenu" >
+                            <MenuItem x:Name="mi_item_view" Header="Переглянути..." Click="RowContextView">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/view_icon.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="mi_item_add_to_order" Header="Додати до замовлення..." Click="RowContextAdd">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/plus_icon.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </DataGrid.Resources>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{StaticResource MyWhiteBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource MyBlackBrush}" />
+                            <Setter Property="FontSize" Value="25" />
+                            <Setter Property="FontFamily" Value="Global Serif" />
+                            <Setter Property="ContextMenu" Value="{StaticResource RowContextMenu}"/>
+                            <Style.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Gray" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFE6E3E2" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Gray" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="#FFE6E3E2" />
+
+                            </Style.Resources>
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="{StaticResource MyBlackBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource MyWhiteBrush}" />
+                            <Setter Property="FontSize" Value="30" />
+                            <Setter Property="FontFamily" Value="Global Serif" />
+                            <Setter Property="Padding" Value="10" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="BorderBrush" Value="{StaticResource MyPaleBlackBrush}" />
+                            <Setter Property="BorderThickness" Value="0 0 1 1" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="{StaticResource MySlightBlackBrush}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Назва" Binding="{Binding Name}"
+                                        MinWidth="140"/>
+                        <DataGridTextColumn Header="Кількість" Binding="{Binding FullAmount}"
+                                        MinWidth="160"/>
+                        <DataGridTextColumn Header="Ціна" Binding="{Binding CurrentPriceString}"
+                                        MinWidth="100"/>
+                        <DataGridTextColumn Header="Знижка" Binding="{Binding PercentDiscount}"
+                                        MinWidth="130" MaxWidth="130">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="0%">
+                                            <Setter Property="Background" Value="{StaticResource MyLightGreyBrush}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Товарів" Binding="{Binding AvailableItems}"
+                                        MinWidth="140">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="0">
+                                            <Setter Property="Background" Value="{StaticResource MyLightGreyBrush}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Категорія" Binding="{Binding FK_Category}"
+                                        MinWidth="160">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Підкатегорія" Binding="{Binding FK_SubCategory}"
+                                        MinWidth="190">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="">
+                                            <Setter Property="Background" Value="{StaticResource MyLightGreyBrush}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Виробник" Binding="{Binding FK_Manufacturer}"
+                                        MinWidth="150"/>
+                        <DataGridTextColumn Header="Країна" Binding="{Binding FK_Country}"
+                                        MinWidth="140"/>
+                        <DataGridTextColumn Header="Додадково" Binding="{Binding Comment}"
+                                        Width="*" MinWidth="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="">
+                                            <Setter Property="Background" Value="{StaticResource MyLightGreyBrush}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+
+        <!-- Грід поточного замовлення -->
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btn_confirm_order"  Grid.Column="1" Style="{DynamicResource btn_black_text}"
+                    Content="✔" FontSize="40" Margin="30" Click="btn_confirm_order_Click"/>
+            <Button x:Name="btn_cancel_order" Grid.Row="1" Grid.Column="1" Style="{DynamicResource btn_black_text}"
+                    Content="✖" FontSize="40" Margin="30" Click="btn_cancel_order_Click"/>
+
+            <DataGrid x:Name="datagrid_items_in_order" Grid.Row="0" Grid.RowSpan="2" Margin="30 20" Background="{StaticResource MyWhiteBrush}"
+                   AutoGenerateColumns="False" CanUserAddRows="False"
+                  CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="False"
+                  IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column"
+                      BorderThickness="1" BorderBrush="{StaticResource MyPaleBlackBrush}">
+
+                <DataGrid.Resources>
+                    <ContextMenu x:Key="OrderContextMenu" >
+                        <MenuItem x:Name="mi_order_remove" Header="Прибрати з замовлення" Click="mi_order_remove_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/delete_icon.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.Resources>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="{StaticResource MyWhiteBrush}" />
+                        <Setter Property="Foreground" Value="{StaticResource MyBlackBrush}" />
+                        <Setter Property="FontSize" Value="25" />
+                        <Setter Property="FontFamily" Value="Global Serif" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="ContextMenu" Value="{StaticResource OrderContextMenu}"/>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Gray" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Gray" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFE6E3E2" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Gray" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="#FFE6E3E2" />
+
+                        </Style.Resources>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{StaticResource MyBlackBrush}" />
+                        <Setter Property="Foreground" Value="{StaticResource MyWhiteBrush}" />
+                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontFamily" Value="Global Serif" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="BorderBrush" Value="{StaticResource MyPaleBlackBrush}" />
+                        <Setter Property="BorderThickness" Value="0 0 1 1" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="{StaticResource MySlightBlackBrush}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Назва" Binding="{Binding Name}"
+                                        MinWidth="240"/>
+                    <DataGridTextColumn Header="Кількість" Binding="{Binding Amount}"
+                                        MinWidth="200">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="0%">
+                                        <Setter Property="Background" Value="{StaticResource MyLightGreyBrush}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Ціна" Binding="{Binding FullPriceStr}"
+                                        MinWidth="200">
+                    <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дійсний до" Binding="{Binding BatchExpiryDate}"
+                                        MinWidth="200" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

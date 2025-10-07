@@ -1,0 +1,52 @@
+﻿<Window x:Name="window_Auth" x:Class="HealthyFood_Shop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthyFood_Shop"
+        mc:Ignorable="d"
+Title="Авторизація" Height="1080" Width="1920" MinHeight="585" MinWidth="860"  WindowState="Maximized" Loaded="window_Auth_Loaded">
+    <Grid Background="{DynamicResource MyYellowBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Margin="0 0 0 30" FontSize="130" HorizontalAlignment="Center" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="4" Content="HealthyFoods" >
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFF7E9"/>
+                    <GradientStop Color="#05FFFFFF" Offset="0.802"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="5" CornerRadius="10" Background="{DynamicResource MyBlackBrush}"/>
+        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="10 10 0 0" Background="{DynamicResource MyGreyBrush}" />
+
+
+
+        <Label Padding="18" FontSize="35" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="Авторизація в системі" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Gentium Basic"/>
+        <Label Margin ="15 5 0 0" Grid.Row="3" Grid.Column="1" Content="Логін:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Margin ="15 0 0 0"  Grid.Row="4" Grid.Column="1" Content="Пароль:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label x:Name="label_Error_info" Visibility="Collapsed" FontSize="20" Content="*Невірний логін чи пароль!" Margin ="0 0 20 0" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource MyErrorBrush}"/>
+        <TextBox x:Name="tb_login" Grid.Row="3" Grid.Column="2" Margin="5 15 20 10" HorizontalAlignment="Left" Style="{DynamicResource tb_default}" VerticalAlignment="Top"
+                 Width="340" Height="44"/>
+        <PasswordBox Style="{DynamicResource passb_default}" x:Name="passb_pass" Grid.Row="4" Grid.Column="2" Margin="5 10 20 10" HorizontalAlignment="Left" VerticalAlignment="Center"
+                 Width="340" Height="44" />
+        <Button Margin="0,15,0,10" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"  Style="{DynamicResource btn_default}" Content="Вхід" VerticalAlignment="Center" Height="50" Width="130" Click="Button_Click" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Name="uc_z_report" x:Class="HealthyFood_Shop.MenuParts.Z_Report"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HealthyFood_Shop.MenuParts"
+             mc:Ignorable="d" 
+              d:DesignHeight="900" d:DesignWidth="1400" Loaded="uc_z_report_Loaded">
+    <Grid  Background="{DynamicResource MyYellowBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition  />
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btn_print" Grid.Row="1" Grid.Column="1" Width="400" Height="75" Margin="15 10"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Style="{StaticResource btn_black_text}" Content="Друкувати" Click="btn_print_Click"/>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid Width="1300" Height="600" Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.RowSpan="2" Background="{StaticResource MyLessBlack}" />
+                <Label FontSize="35" Content="Z-Звіт"/>
+                <TextBox Grid.Row="1" x:Name="tb_zreport" Style="{StaticResource tb_default}"
+                         Text="Тест"  FontSize="30" Margin="8 0 8 8" Padding="2"
+                         TextWrapping="Wrap" IsReadOnly="True"
+                         VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontFamily="Courier New"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
